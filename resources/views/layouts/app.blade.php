@@ -2,7 +2,6 @@
 <html lang="en">
     <head>
         <title>Laravel 快速入門 - 基本</title>
-
         <!-- CSS 及 JavaScript -->
     </head>
 

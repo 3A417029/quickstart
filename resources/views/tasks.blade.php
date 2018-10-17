@@ -1,13 +1,10 @@
 @extends('layouts.app')
-
 @section('content')
 
-    <!-- Bootstrap 樣板... -->
-
     <div class="panel-body">
-        <!-- 顯示驗證錯誤 -->
+    <!-- 顯示驗證錯誤 -->
     @include('common.errors')
-
+    
     <!-- 新任務的表單 -->
         <form action="/task" method="POST" class="form-horizontal">
         {{ csrf_field() }}
@@ -38,16 +35,13 @@
             <div class="panel-heading">
                 目前任務
             </div>
-
             <div class="panel-body">
                 <table class="table table-striped task-table">
-
                     <!-- 表頭 -->
                     <thead>
                     <th>Task</th>
                     <th>&nbsp;</th>
                     </thead>
-
                     <!-- 表身 -->
                     <tbody>
                     @foreach ($tasks as $task)
@@ -58,17 +52,12 @@
                             </td>
 
                             <td>
-
-                                <!-- 刪除按鈕 -->
-
+                            <!-- 刪除按鈕 -->
                                 <form action="/task/{{ $task->id }}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
-
                                     <button>刪除任務</button>
                                 </form>
-
-
                             </td>
                         </tr>
                     @endforeach
